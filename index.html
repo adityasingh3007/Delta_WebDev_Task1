@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+<title>Mentees</title>
+<link rel="icon" type="image/ico" href="./favicon.ico">
+<head>
+	<link href="./main.css" rel="stylesheet">
+	<link href="./body.css" rel="stylesheet">
+	<link href="./new.css" rel="stylesheet">	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="./java.js"></script>
+</head>
+<body>
+	<div>
+	<div class="header">
+		<div class="header_wrap">
+			<div class="logo grid">
+			    Mentees
+			</div>
+			<div class="manage grid">
+				<span class="m_com grid add" tittle="Add">
+					<button class="com_but but_add" tittle="Add" aria-label="Add">
+						<span class="add_sym" onClick="display_add_mentee();">+</span>
+					</button>
+				</span>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="body_container">
+		<div class="overview b_grid">
+			<div class="_head t_col">Overview</div>
+			<hr>
+			<div class="o_list">
+					<div class="grid">Total number of mentees : <span class="js_ans t_col" id="nom_disp">0</span></div>
+					<div class="grid rfloat sort_but"><input type="submit" class="s_but" value="SORT" onClick="sort_ment();"></div>
+			</div>
+		</div>
+		<br>
+		<div class="m_list b_grid">
+			<div class="_head t_col">Mentees List</div>
+			<hr>
+			<div class="m_list_container">
+				<table id="lis_ment">
+
+				</table>
+			</div>
+			<div class="m_list_container empty" id="empty_list" style="display:block">
+				NO MENTEE IS AVAILABLE. PLEASE CLICK '+'  ON HEADER TO ADD A MENTEE.
+			</div>
+		</div>
+	</div>
+
+	<div class="new_mentee"  id="new_mentee" style="display:none">
+		<div class="nm_cont">
+			<div class="header_wrap">
+				<div class="logo grid">Add New Mentee</div>
+				<div class="grid rfloat">
+					<input type="button" class="close_but" value="X"  onClick='new_mentee.style.display="none";'>
+				</div>
+				<hr>
+				<h4>Provide the following details:</h4>
+			</div>
+			<center>
+			<div class="_input">
+				<input type="text" class="ui_text" id="u_m_name" placeholder="Name" value="" autocomplete="off" autofocus="on">
+			</div>
+			<div class="_input">
+				<input type="date" class="ui_text" id="u_m_dob"  value="" onblur="cal_age();">
+			</div>
+			<div class="_input">
+				<input type="number" class="ui_text" id="u_m_age" placeholder="Age" value="" autocomplete="off">
+			</div>
+			<div class="_input">
+				Gender: 
+				<div style="display:inline">
+					<input type="radio" name="sex" value="Female" class="_radio" id="u_female">
+					<label class="rad_"  style="cursor:pointer" for="u_female">Female</label>
+				</div>
+				<div style="display:inline">
+					<input type="radio" name="sex" value="Male" class="_radio" id="u_male">
+					<label class="rad_"  style="cursor:pointer" for="u_male">Male</label>
+				</div>
+			</div>
+			<div class="_input">
+				<input type="text" class="ui_text" placeholder="Profile" id="u_m_profile"  value="" autocomplete="off">
+			</div>
+			<div class="_input" style="margin-top:30px">
+				<input type="submit" class="s_but" value="Submit" onClick="add_ment();">
+			</div>
+			</center>
+		</div>
+	</div>
+
+
+	<div class="new_mentee"  id="edit_mentee" style="display:none">
+		<div class="nm_cont">
+			<div class="header_wrap">
+				<div class="logo grid">Edit Mentee Details</div>
+				<div class="grid rfloat">
+					<input type="button" class="close_but" value="X"  onClick='document.getElementById("edit_mentee").style.display="none";'>
+				</div>
+				<hr>
+				<h4>Edit the required field:</h4>
+			</div>
+			<center>
+			<div class="_input">
+				<input type="text" class="ui_text" id="u_e_name" placeholder="Name" value="" autocomplete="off">
+			</div>
+			<div class="_input">
+				<input type="number" class="ui_text" id="u_e_age" placeholder="Age" value="" autocomplete="off">
+			</div>
+			<div class="_input">
+				Gender: 
+				<div style="display:inline">
+					<input type="radio" name="sex" value="Female" class="_radio" id="u_e_fem">
+					<label class="rad_"  style="cursor:pointer" for="u_e_fem">Female</label>
+				</div>
+				<div style="display:inline">
+				<input type="radio" name="sex" value="Male" class="_radio" id="u_e_mal">
+				<label class="rad_"  style="cursor:pointer" for="u_e_mal">Male</label>
+				</div>
+			</div>
+			<div class="_input">
+				<input type="text" class="ui_text" placeholder="Profile" id="u_e_profile"  value="" autocomplete="off">
+			</div>
+			<input type="hidden" value="" id="e_m_index">
+			<div class="_input" style="margin-top:30px">
+				<input type="submit" class="s_but" value="Submit" onClick="edit_app_ment();">
+			</div>
+			</center>
+		</div>
+	</div>
+	<br><br><br>
+	<div class="footer">
+	<center>
+	<hr>
+	&copy; Aditya_Singh 2018
+	</center
+	</div>
+	</div>
+</body>
+</html>

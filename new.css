@@ -1,0 +1,37 @@
+.new_mentee {
+			background: #444343a6;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 10px;
+			position:absolute;width:100%;height:100%;position:fixed;top:0px;z-index:100;display:block;
+			}
+
+.nm_cont {background:#fff;margin: auto; max-width:1110px;margin-top:10px;padding:10px;box-shadow:0px 0px 10px 6px #4e4646;}
+
+.nm_cont .header_wrap {max-width:1050px}
+
+.nm_cont .logo {font-size:20px}
+
+.rfloat {float:right}
+
+.close_but {
+			background:#ff8100;
+			border:0px;
+			outline:none;
+			color:#fff;
+			padding:5px 8px 5px 8px;
+			cursor:pointer;
+			font-weight:bold;
+			border-radius:5px;
+			transition:all 0.5s
+			}
+			
+.close_but:hover {opacity:0.8;transform:scale(1.2)}
+
+._input {margin-top:20px}
+
+.ui_text {padding:10px;border:0px;outline:none;border-bottom:2px solid grey;padding-left:2px;transition:all 0.5s;min-width:220px}
+
+.ui_text:focus {border-bottom:2px solid #ff8100;}
+
+input[type=date] {text-transform:uppercase}

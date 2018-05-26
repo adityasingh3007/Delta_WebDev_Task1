@@ -19,7 +19,8 @@ created that ID can be again used.
   function expand_profile(x) {                                             
         if(document.getElementById("exp_"+x).innerHTML=="+") {         	
 			document.getElementById("exp_cont"+x).style.display="block";			   
-			document.getElementById("exp_"+x).innerHTML="-";						   
+			document.getElementById("exp_"+x).innerHTML="-";
+			document.getElementById("comment_"+x).focus();
 			//Code to collaspe all other profile.
 			for(i=0;i<mentee.length;i++) {											   
 				if(mentee[i]==1) {													   
@@ -128,7 +129,7 @@ created that ID can be again used.
       var pos=check_avaibility_of_ID(); 					//Get the position from mentee array to add this ID.
       nom=pos+1;								//Acutal ID = pos +1
       var table = document.getElementById("lis_ment");
-      var newRow = table.insertRow(table.rows.length).outerHTML="<tr class='pal' id='r_"+nom+"'><td class='expander' id='exp_"+nom+"' onClick='expand_profile("+nom+");'>+</td><td id=''><div class='m_name t_in' id='name_"+nom+"'>"+mentee_name+"</div><div class='m_rate t_in'><div class='star_cont'><div class='str_wrapper'><input type='checkbox' id='m"+nom+"_st_1' onClick='star(this);'><label for='m"+nom+"_st_1' id='m"+nom+"_st_l_1' onmouseover='star_hover(this);' onmouseout='star_out(this);'></label></div><div class='str_wrapper'><input type='checkbox' id='m"+nom+"_st_2' onClick='star(this);'><label for='m"+nom+"_st_2' id='m"+nom+"_st_l_2' onmouseover='star_hover(this);' onmouseout='star_out(this);'></label></div><div class='str_wrapper'><input type='checkbox' id='m"+nom+"_st_3' onClick='star(this);'><label for='m"+nom+"_st_3' id='m"+nom+"_st_l_3' onmouseover='star_hover(this);' onmouseout='star_out(this);'></label></div><div class='str_wrapper'><input type='checkbox' id='m"+nom+"_st_4' onClick='star(this);'><label for='m"+nom+"_st_4' id='m"+nom+"_st_l_4' onmouseover='star_hover(this);' onmouseout='star_out(this);'></label></div><div class='str_wrapper'><input type='checkbox' id='m"+nom+"_st_5' onClick='star(this);'><label for='m"+nom+"_st_5' id='m"+nom+"_st_l_5' onmouseover='star_hover(this);' onmouseout='star_out(this);'></label></div></div></div><div class='exp_cont' id='exp_cont"+nom+"' ><div class='comm_cont e_div'><textarea placeholder='Write down comments here'></textarea></div><div class='abt_cont e_div'><div class='_head t_col_ab'>About:</div><div class='m_abt_cont'><table id='abt'><tr><td class='abt_leg'>Age :</td><td> <span id='age_"+nom+"'>"+age+"</span></td></tr><tr><td class='abt_leg'>D.O.B :</td><td> <span id='dob_"+nom+"'>"+dob+"</span></td></tr><tr><td class='abt_leg'>Gender :</td><td> <span id='gender_"+nom+"'>"+gender+"</span></td></tr><tr><td class='abt_leg'>Profile :</td> <td><span id='profile_"+nom+"'>"+profile+"</span></td></tr></table></div></div><div class='set_row'><span class='s_but_cont'><input type='button' class='s_but' value='Edit' onClick='edit_mentee("+nom+")'></span><span class='s_but_cont'><input type='button' class='s_but del' value='Delete' onClick='delet(this)'></span></div></div></div></td></tr>"; 
+      var newRow = table.insertRow(table.rows.length).outerHTML="<tr class='pal' id='r_"+nom+"'><td class='expander' id='exp_"+nom+"' onClick='expand_profile("+nom+");'>+</td><td id=''><div class='m_name t_in' id='name_"+nom+"'>"+mentee_name+"</div><div class='m_rate t_in'><div class='star_cont'><div class='str_wrapper'><input type='checkbox' id='m"+nom+"_st_1' onClick='star(this);'><label for='m"+nom+"_st_1' id='m"+nom+"_st_l_1' onmouseover='star_hover(this);' onmouseout='star_out(this);'></label></div><div class='str_wrapper'><input type='checkbox' id='m"+nom+"_st_2' onClick='star(this);'><label for='m"+nom+"_st_2' id='m"+nom+"_st_l_2' onmouseover='star_hover(this);' onmouseout='star_out(this);'></label></div><div class='str_wrapper'><input type='checkbox' id='m"+nom+"_st_3' onClick='star(this);'><label for='m"+nom+"_st_3' id='m"+nom+"_st_l_3' onmouseover='star_hover(this);' onmouseout='star_out(this);'></label></div><div class='str_wrapper'><input type='checkbox' id='m"+nom+"_st_4' onClick='star(this);'><label for='m"+nom+"_st_4' id='m"+nom+"_st_l_4' onmouseover='star_hover(this);' onmouseout='star_out(this);'></label></div><div class='str_wrapper'><input type='checkbox' id='m"+nom+"_st_5' onClick='star(this);'><label for='m"+nom+"_st_5' id='m"+nom+"_st_l_5' onmouseover='star_hover(this);' onmouseout='star_out(this);'></label></div></div></div><div class='exp_cont' id='exp_cont"+nom+"' ><div class='comm_cont e_div'><div class='input_legend' id='ui_comment_"+nom+"' style='margin-top:10px;margin-bottom:10px'>Comments :</div><div><textarea placeholder='Write down comments here' id='comment_"+nom+"' oninput='show_comments_caption("+nom+",this.id)'></textarea></div></div><div class='abt_cont e_div'><div class='_head t_col_ab'>About:</div><div class='m_abt_cont'><table id='abt'><tr><td class='abt_leg'>Age :</td><td> <span id='age_"+nom+"'>"+age+"</span></td></tr><tr><td class='abt_leg'>D.O.B :</td><td> <span id='dob_"+nom+"'>"+dob+"</span></td></tr><tr><td class='abt_leg'>Gender :</td><td> <span id='gender_"+nom+"'>"+gender+"</span></td></tr><tr><td class='abt_leg'>Profile :</td> <td><span id='profile_"+nom+"'>"+profile+"</span></td></tr></table></div></div><div class='set_row'><span class='s_but_cont'><input type='button' class='s_but' value='Edit' onClick='edit_mentee("+nom+")'></span><span class='s_but_cont'><input type='button' class='s_but del' value='Delete' onClick='delet(this)'></span></div></div></div></td></tr>"; 
 	  new_mentee.style.display="none";						//Hide the div which adds new mentee.
 	  alert ("Succesfully Added");
 	  mentee_rate[pos]=0;									//Update its rating to 0
@@ -138,6 +139,10 @@ created that ID can be again used.
 	  document.getElementById("u_m_dob").value="";
 	  document.getElementById("u_female").checked=false;
 	  document.getElementById("u_male").checked=false;
+	  document.getElementById("ui_name").style.height="0px";
+	  document.getElementById("ui_age").style.height="0px";
+	  document.getElementById("ui_dob").style.height="0px";
+	  document.getElementById("ui_profile").style.height="0px";
 	  document.getElementById("empty_list").style.display="none";  //Hide the div which shows no mentee is added. Please add a mentee.
 	  mentee[pos]=1;										//Update the mentee array with current ID's index with 1.
 	  document.getElementById("nom_disp").innerHTML=count_available_ID();
@@ -346,7 +351,32 @@ function star_hover(n) {
 		     }
 		document.getElementById("u_m_age").value=age;		//Display the age in the textbox.
  }
+ 
+ //Function to show the text-caption after the corresponding text field's
+ // value is changed.
+ function show_text(x,feild) {
+	 var id="ui_";
+	 var value;
+	 if(x!="dob")
+		value=document.getElementById(feild).value;
+    else 
+		value=new Date(document.getElementById(feild).value);
+	 if(value!="") 
+		 document.getElementById(id+x).style.height="14px";
+	 else
+		 document.getElementById(id+x).style.height="0px";
+ }
 
+//Function to show the text-caption after the corresponding comment field's
+// value is changed.
+ function show_comments_caption(x,feild) {
+	 var id="ui_comment_";
+	 var value=document.getElementById(feild).value;
+	 if(value!="") 
+		 document.getElementById(id+x).style.height="14px";
+	 else
+		 document.getElementById(id+x).style.height="0px";
+ }
 
 
 

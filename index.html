@@ -60,15 +60,22 @@
 				<h4>Provide the following details:</h4>
 			</div>
 			<center>
+			<div style="max-width:230px;margin-left:auto;margin-right:auto">
 			<div class="_input">
-				<input type="text" class="ui_text" id="u_m_name" placeholder="Name" value="" autocomplete="off" autofocus="on">
+				<div class="input_legend" id="ui_name">Name :</div>
+				<input type="text" class="ui_text" id="u_m_name" placeholder="Name" value="" autocomplete="off" autofocus="on" oninput='show_text("name",this.id);'>
 			</div>
+			<br>
 			<div class="_input">
-				<input type="date" class="ui_text" id="u_m_dob"  value="" onblur="cal_age();">
+				<div class="input_legend" id="ui_dob">Date of Birth :</div>
+				<input type="date" class="ui_text" id="u_m_dob"  value="" onblur="cal_age();" oninput='show_text("dob",this.id);'>
 			</div>
+			<br>
 			<div class="_input">
-				<input type="number" class="ui_text" id="u_m_age" placeholder="Age" value="" autocomplete="off">
+			    <div class="input_legend" id="ui_age">Age :</div>
+				<input type="number" class="ui_text" id="u_m_age" placeholder="Age" value="" autocomplete="off" onfocus='show_text("age",this.id);'>
 			</div>
+			<br>
 			<div class="_input">
 				Gender: 
 				<div style="display:inline">
@@ -80,11 +87,14 @@
 					<label class="rad_"  style="cursor:pointer" for="u_male">Male</label>
 				</div>
 			</div>
+			<br>
 			<div class="_input">
-				<input type="text" class="ui_text" placeholder="Profile" id="u_m_profile"  value="" autocomplete="off">
+				<div class="input_legend" id="ui_profile">Profile :</div>
+				<input type="text" class="ui_text" placeholder="Profile" id="u_m_profile"  value="" autocomplete="off" oninput='show_text("profile",this.id);'>
 			</div>
 			<div class="_input" style="margin-top:30px">
 				<input type="submit" class="s_but" value="Submit" onClick="add_ment();">
+			</div>
 			</div>
 			</center>
 		</div>
@@ -102,10 +112,13 @@
 				<h4>Edit the required field:</h4>
 			</div>
 			<center>
+			<div style="max-width:230px;margin-left:auto;margin-right:auto">
 			<div class="_input">
+				<div class="input_legend" style="height:14px !important" id="">Name :</div>
 				<input type="text" class="ui_text" id="u_e_name" placeholder="Name" value="" autocomplete="off">
 			</div>
 			<div class="_input">
+				<div class="input_legend" style="height:14px !important" id="">Age :</div>
 				<input type="number" class="ui_text" id="u_e_age" placeholder="Age" value="" autocomplete="off">
 			</div>
 			<div class="_input">
@@ -120,12 +133,14 @@
 				</div>
 			</div>
 			<div class="_input">
+				<div class="input_legend" id="" style="height:14px !important">Profile :</div>
 				<input type="text" class="ui_text" placeholder="Profile" id="u_e_profile"  value="" autocomplete="off">
 			</div>
 			<input type="hidden" value="" id="e_m_index">
 			<div class="_input" style="margin-top:30px">
 				<input type="submit" class="s_but" value="Submit" onClick="edit_app_ment();">
 			</div>
+			<div style="max-width:230px;margin-left:auto;margin-right:auto">
 			</center>
 		</div>
 	</div>

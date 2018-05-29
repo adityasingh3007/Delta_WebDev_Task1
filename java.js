@@ -1,5 +1,5 @@
 //Gloabal variables
- let mentee;             /* Array to store mentee details in each its element as objects.*/
+ let mentee;             /* Array to store mentee details in each of its element as objects.*/
 
 //Constructor to add details to newly created mentee's object. 
 function Create_mentee(m_name,m_dob,m_age,m_gender,m_profile,m_rating,m_comments) {

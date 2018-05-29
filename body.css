@@ -3,6 +3,7 @@
 				margin-left:auto;
 				margin-right:auto;
 				max-width:1150px;
+				min-width:330px;
 				z-index:1;
 				padding:10px;
 				box-shadow: 2px 2px 20px 6px #0000007a;
@@ -24,7 +25,9 @@
 
 .t_in {display:inline}
 
-.sort_but {margin-right:5px}
+.two_button {display:inline;}
+
+.sort_but {margin-right:5px;}
 
 table {width:100%}
 
@@ -68,7 +71,8 @@ td {padding:10px}
 		cursor:pointer;
         transition:all 0.5s;
 		border:2px solid #ff8100;
-		font-weight:bold
+		font-weight:bold;
+		outline:none;
 		}
 		
 .s_but:hover {color:#ff8100;background:#fff;}
@@ -120,15 +124,26 @@ td {padding:10px}
     border: 5px solid #6f6b6b;
     text-shadow: 2px 0px 5px #000;
     padding: 10px;}
+@media (max-width: 655px) {
+   .two_button {display:block;margin-top:10px}
+
+}
+
 @media (max-width: 530px) {
    .t_in {display:block;margin-top:5px}
    .m_list_container {margin:0px;}
    .exp_cont {margin-top:45px}
    .m_name {font-size:18px;}
    .s_but {display:block}
-   .sort_but {margin-top:20px}
+}
 
-}
+@media (max-width: 450px) {
+   .two_button {float:left}
+   .sort_but {font-size:15px !important;margin-top:10px}
+
+}
+
+
 
 
 

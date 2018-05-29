@@ -6,9 +6,8 @@
 	<link href="./main.css" rel="stylesheet">
 	<link href="./body.css" rel="stylesheet">
 	<link href="./new.css" rel="stylesheet">	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="./java.js"></script>
 </head>
-<body>
+<body onload="check_saved_data();">
 	<div>
 	<div class="header">
 		<div class="header_wrap">
@@ -31,7 +30,10 @@
 			<hr>
 			<div class="o_list">
 					<div class="grid">Total number of mentees : <span class="js_ans t_col" id="nom_disp">0</span></div>
-					<div class="grid rfloat sort_but"><input type="submit" class="s_but" value="SORT" onClick="sort_ment();"></div>
+					<div class="two_button">
+					<div class="rfloat sort_but"><input type="submit" class="s_but del" value="DELETE ALL MENTEE" onClick="delete_all_ment();"></div>
+					<div class="rfloat sort_but"><input type="submit" class="s_but" value="SORT" onClick="sort_ment();"></div>
+					</div>
 			</div>
 		</div>
 		<br>
@@ -51,7 +53,7 @@
 
 	<div class="new_mentee"  id="new_mentee" style="display:none">
 		<div class="nm_cont">
-			<div class="header_wrap">
+			<div class="header_wrap" style="margin-top:20px">
 				<div class="logo grid">Add New Mentee</div>
 				<div class="grid rfloat">
 					<input type="button" class="close_but" value="X"  onClick='new_mentee.style.display="none";'>
@@ -101,9 +103,9 @@
 	</div>
 
 
-	<div class="new_mentee"  id="edit_mentee" style="display:none">
+	<div class="new_mentee"  id="edit_mentee" style="display:none;">
 		<div class="nm_cont">
-			<div class="header_wrap">
+			<div class="header_wrap" style="margin-top:20px">
 				<div class="logo grid">Edit Mentee Details</div>
 				<div class="grid rfloat">
 					<input type="button" class="close_but" value="X"  onClick='document.getElementById("edit_mentee").style.display="none";'>
@@ -138,6 +140,7 @@
 			</div>
 			<input type="hidden" value="" id="e_m_index">
 			<div class="_input" style="margin-top:30px">
+				<input type="hidden" id="calling_ID" value="">
 				<input type="submit" class="s_but" value="Submit" onClick="edit_app_ment();">
 			</div>
 			<div style="max-width:230px;margin-left:auto;margin-right:auto">
@@ -152,5 +155,18 @@
 	</center
 	</div>
 	</div>
+<script type="JavaScript">
+		let date=new Date();
+		let day=date.getDate();				
+		let mon=date.getMonth()+1;
+		if(day<10)
+			day="0"+day;
+		if(month<10)
+			month="0"+month;		
+		let yr=date.getFullYear();
+		date=[day,month,yr].join('-');
+		document.getElementById("u_m_dob").setAttribute("max",date);
+	</script>
+<script src="./java.js"></script>
 </body>
 </html>

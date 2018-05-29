@@ -2,7 +2,7 @@ body {
        direction:ltr;
        font-family: 'hps';
 	   margin:0;
-	   background:#ddd
+	   background:#ddd;
 	  }
 	  
 a {text-decoration:none}
@@ -21,7 +21,7 @@ a {text-decoration:none}
 		 box-shadow: 0px 2px 6px 2px #9e9494;
 		 height:60px;
 		 position:sticky;top:0px;
-		 z-index:10
+		 z-index:10;min-width:330px;
 		}
 		
 .header_wrap {max-width:1110px;margin-left:auto;margin-right:auto;}
@@ -55,9 +55,9 @@ a {text-decoration:none}
 		padding: 10px;
 		font-weight:bold;
 		letter-spacing:2px;
-		margin-bottom: 0px;
 		position: absolute;
-		width: 100%;
+		width: 100%;min-width:330px;
+		
 		}
 
 
